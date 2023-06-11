@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <title>LOJA TÊNIS</title>
+</head>
+<body>
+    <!--Essa div sera um modelo fixo no qual todo item que for add tera como modelo-->
+    <div class="modelo">
+
+        <div class="item--tenis">
+            <a href="">
+                <div class="img--tenis"><img src="" alt="imagem do item"></div>
+                <div class="nome--tenis">--</div>
+                <div class="preco--tenis"><strong>R$</strong>--</div>
+            </a>
+        </div> 
+    
+        <!--Modelo com o item no carrinho de compras-->
+        <div class="item--carrinho">
+            <img src="" alt="imagem do item">
+            <div class="nome--item--carrinho">--</div>
+            <div class="area--quantidade--item--carrinho">
+                <button class="menos--item--carrinho">-</button>
+                <div class="quantidade--item--carrinho">1</div>
+                <button class="mais--item--carrinho">+</button>
+            </div>
+        </div>
+        
+    </div>
+    <!------------------------------------------------------------------------------->
+    <header>
+        <nav>
+            <div class="div--logo"><img src="images/logo.svg" alt="logo Marca"></div>
+            <div class="menu-open">
+                <span class="material-symbols-outlined">search</span>
+                <span class="material-symbols-outlined">shopping_cart</span><span>-</span>
+                <span class="material-symbols-outlined">menu<span>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <h1>PUMA</h1>
+        <div class="area--produtos"></div>
+    </main>
+    <!--Carrinho de compras-->
+    <aside class="carrinho">
+        <div><span class="material-symbols-outlined">close</span></div>
+        <div class="div--carrinho">
+            <h1>Seus Produtos</h1>
+            <!--Mudar nome classes-->
+            <div class="info--compra">
+                <div class="div--valor--item subtotal">
+                    <span>Subtotal</span>
+                    <span class="valor--item">R$ --</span>
+                </div>
+                <div class="div--valor--item desconto">
+                    <span>Desconto</span>
+                    <span class="valor--item">R$ --</span>
+                </div>
+                <div class="div--valor--item total">
+                    <span><strong>Total</strong></span>
+                    <span class="valor--item"><strong>R$ --</strong></span>
+                </div>
+                <button>Finalizar a compra</button>
+            </div>
+        </div>
+    </aside>
+    <!--Fim carrinho de compras-->
+
+    <!--Sessão que mostrará mais detalhes ao clicar em um produto, que será possivelmente comprado-->
+    <div class="janela--produto--view">
+        <div class="janela--produto--body">
+            <div class="voltar--home">
+                <span class="material-symbols-outlined">
+                arrow_back
+                </span>
+            </div>
+            <div class="div--img--produto--view"><img src="" alt="View Produto"></div>
+            <div class="info--produto">
+                <h1>--</h1> 
+                <div class="desc--produto">--</div>                   
+            </div>
+            <div class="div--preco--produto">
+                <div class="preco--produto"><strong>R$</strong>--</div>
+            </div>
+            <div class="op--tamanho--produto">
+                <div class="div--tamanho">Tamanho:</div>
+                <div data-key="38" class="tamanho--produto"><span>--</span></div>
+                <div data-key="39" class="tamanho--produto"><span>--</span></div>
+                <div data-key="40" class="tamanho--produto"><span>--</span></div>
+            </div>
+            <button class="button--addCarrinho">Adicionar ao carrinho</button>
+            <button class="button--cancelar">Cancelar</button>
+        </div>
+    </div>
+    
+    <script src="tenis.js"></script>
+    <script src="js/script.js"></script>
+    
+</body>
+</html>

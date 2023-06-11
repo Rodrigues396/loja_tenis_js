@@ -1,0 +1,252 @@
+:root{
+    --cor0: #ffff;
+    --cor1: #000000;
+    --cor2: #e7011d;
+    --cor3: #ba8960;
+}
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    display: flex;
+    min-height: 100vh;
+    /*ADICIONAR FONT*/
+    background-color: #ededed;
+}
+.modelo{
+    display: none;
+}
+/*===========================*/
+/*===========MODELO==========*/
+/*===========================*/
+.item--tenis{
+    text-align: center;
+    max-width: 250px;
+    margin: 15px auto 0px auto;
+    background-color: #f5f6fa;
+}
+.item--tenis > a{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.26);
+    color: #000000;
+    background-color: #FAFAFA;
+}
+.img--tenis{
+    width: 200px;
+    height: 210px;
+    border-bottom: 3px solid var(--cor2);
+}
+.img--tenis:hover{
+    border-bottom: 3px solid var(--cor3);
+}
+.img--tenis > img{
+    width: 100%;
+    height: auto;
+}
+.nome--tenis{
+    margin: 10px 0px 5px 0px;
+}
+.preco--tenis{
+    font-size: 15px;
+}
+
+
+
+
+
+
+.item--carrinho{
+    display: none;
+}
+/*===========================*/
+/*===========HEADER==========*/
+/*===========================*/
+header{
+    position: fixed;
+    left:0;
+    top:0;
+    right:0;
+    height:60px;
+    background-color: var(--cor1);   
+}
+nav{
+    text-align: center;
+    margin: 0px 10% 0px 10%;
+    margin-top: 10px;
+
+    display:flex; /* none; */
+    align-items: center;
+    justify-content: space-between; /* flex-end; */ 
+}
+.menu-open span{
+    color: var(--cor2);
+}
+/*===========================*/
+/*============MAIN===========*/
+/*===========================*/
+main{
+    flex: 1;
+    padding: 20px;
+    margin-top: 60px;
+}
+main > h1{
+    border-bottom: 1px solid black;
+    text-align: center;
+}
+.area--produtos{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+/*===========================*/
+/*===CARRINHO DE COMPRAS=====*/
+/*===========================*/
+.carrinho{
+    width: 480px;
+    /*width: 0vw;*/
+    height: 100vh;
+    display: none;
+
+    position: fixed;
+    right: 0;
+    top: 60px;
+    /*transition:all ease .2s;
+    overflow-x: hidden;*/
+    background-color: #f5f6fa;
+    /*background-color: hsl(0, 0%, 73%);*/
+}
+/*
+.carrinho.show{
+    width: 30vw;
+}*/
+.div--carrinho{
+    width: 440px;
+    margin: auto;
+    background-color: #f5f6fa;
+}
+.div--carrinho > h1{
+    text-align: center;
+}
+.div--valor--item{
+    margin-bottom: 10px;
+}
+.valor--item{
+    float: right;
+    /*margin-right: 20px;*/
+}
+.info--compra > button{
+    width: 440px;
+    height: 38px;
+    cursor: pointer;
+
+    margin-top: 7px;
+    border-style: none;
+    font-size: 1.3em;
+
+    color: #ededed;
+    background-color: var(--cor2);
+}
+/*===========================*/
+/*===janela--produto--view===*/
+/*===========================*/
+.janela--produto--view{
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    display: none;
+    /*
+    align-items: center;
+    justify-content: center;
+    overflow-y: auto;
+    */
+
+    background-color: #FAFAFA;
+}
+.janela--produto--body{
+    display: flex;
+    flex-direction: column;
+    width: 450px;
+    height: 90%;
+    margin: 60px auto 0px auto;
+    background-color: #FAFAFA;
+}
+.voltar--home > span{
+    font-size: 35px;
+    cursor: pointer;
+}
+.div--img--produto--view{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FAFAFA;
+}
+.div--img--produto--view img{
+    width: 360px;
+}
+.div--preco--produto{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+.info--produto{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.info--produto .desc--produto{
+    font-size: 12px;
+    color: #a0a0a0;
+}
+.op--tamanho--produto{
+    margin: 10px 0px 10px 0px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+}
+.div--tamanho{
+    width: 80px;
+    margin-top: 10px;
+    text-align: center;
+}
+.tamanho--produto{
+    width: 50px;
+    height: 40px;
+    margin-left: 2px;
+    border: 1px solid black;
+    background-color: #ededed;
+}
+.tamanho--produto:active{
+    background-color: #a0a0a0;
+}
+.tamanho--produto > span{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.button--addCarrinho{
+    height: 40px;
+    border-style: none;
+    cursor: pointer;
+    color: white;
+    background-color: var(--cor2);
+}
+.button--addCarrinho:hover{
+    background-color: #a70114;
+}
+.button--cancelar{
+    height: 30px;   
+    border-style: none; 
+    cursor: pointer;
+}
+.button--cancelar:active{
+    background-color: #a0a0a0c0;
+}
