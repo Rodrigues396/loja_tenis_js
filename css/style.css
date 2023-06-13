@@ -222,16 +222,39 @@ main > h1{
     margin-left: 2px;
     border: 1px solid black;
     background-color: #ededed;
+    cursor: pointer;
 }
-.tamanho--produto:active{
-    background-color: #a0a0a0;
-}
+
 .tamanho--produto > span{
     margin-top: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+.selecionado{
+    background-color: #a0a0a0;
+}
+
+.area--quantidade--produtos{  
+    height: 40px;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: center; 
+    cursor: pointer;
+}
+.div--quantidade{
+    margin-right: 10px;
+}
+.area--quantidade--produtos button{
+    width: 30px;
+    cursor: pointer;
+}
+.quantidade--produtos{
+    margin-top: 5px;
+    width: 15px;
+    text-align: center;
+}
+
 .button--addCarrinho{
     height: 40px;
     border-style: none;
