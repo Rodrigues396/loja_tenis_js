@@ -69,9 +69,18 @@ c('.button--addCarrinho').addEventListener('click', ()=>{
             qt: quantidade
         })  
     }
+    atualizarCarrinho()
     fecharJanela()
 })
 
+function atualizarCarrinho(){
+    if(carrinho.length > 0){
+        //c('.area--produtos').style.display = 'block'
+        c('.carrinho').classList.add('show')
+    }else {
+        c('.carrinho').classList.remove('show')
+    }
+}
 
 
 
