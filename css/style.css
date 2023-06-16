@@ -170,7 +170,7 @@ main > h1{
     flex-direction: column;
     width: 450px;
     height: 90%;
-    margin: 60px auto 0px auto;
+    margin: 40px auto 0px auto;
     background-color: #FAFAFA;
 }
 .voltar--home > span{
@@ -253,7 +253,7 @@ main > h1{
 }
 
 .button--addCarrinho{
-    height: 40px;
+    height: 50px;
     border-style: none;
     cursor: pointer;
     color: white;
@@ -272,9 +272,6 @@ main > h1{
 }
 
 @media (max-width:510px) {
-    .area--produtos {
-        grid-template-columns: repeat(1, 1fr);
-    }
     .carrinho.show{
         width: 50vw;
     }
