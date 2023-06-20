@@ -52,6 +52,8 @@ cs('.tamanho--produto').forEach((tamanho, sizeIndex)=>{
 })
 //Adicionar ao carrinho
 c('.button--addCarrinho').addEventListener('click', ()=>{
+    //c('main').style.display = 'none'
+    //c('.carrinho').style.left = "100vw"
     //Modelo do Produto
     //console.log("Produto: " + key)
     //Tamanho do Produto
@@ -73,12 +75,53 @@ c('.button--addCarrinho').addEventListener('click', ()=>{
     fecharJanela()
 })
 
+c('.close--carrinho').addEventListener('click', ()=>{
+    c('.carrinho').classList.remove('show')
+})
+c('.info--compra button').addEventListener('click', ()=>{
+    carrinho = []
+    atualizarCarrinho()
+    alert('Compra realizada com sucesso!!')
+})
+
 function atualizarCarrinho(){
     if(carrinho.length > 0){
+        c('.menu .tem--produto--carrinho').style.display = 'inline-block'       
         //c('.area--produtos').style.display = 'block'
         c('.carrinho').classList.add('show')
+        c('.item--no--carrinho').innerHTML = ''
+        let subtotal = 0
+        let desconto = 0
+        let total = 0
+        carrinho.map((itemCarrinho, index) => {
+            let modeloItem = tenisJson.find((itemBD) => itemBD.id == itemCarrinho.id)
+            subtotal += modeloItem.price * itemCarrinho.qt
+            let carrinhoItem = c('.modelo .item--carrinho').cloneNode(true)
+            carrinhoItem.querySelector('img').src = modeloItem.img
+            carrinhoItem.querySelector('.nome--item--carrinho').innerHTML = `${modeloItem.nome}`//verificar  - ${modeloItem.size[itemCarrinho.tamanho]}
+            carrinhoItem.querySelector('.quantidade--item--carrinho').innerHTML = itemCarrinho.qt
+            carrinhoItem.querySelector('.menos--item--carrinho').addEventListener('click', ()=> {
+                if(itemCarrinho.qt > 1){
+                    itemCarrinho.qt--   
+                }else{
+                    carrinho.splice(index, 1)
+                }
+                atualizarCarrinho()
+            })
+            carrinhoItem.querySelector('.mais--item--carrinho').addEventListener('click', ()=> {
+                itemCarrinho.qt++
+                atualizarCarrinho()
+            })
+            c('.item--no--carrinho').append(carrinhoItem)
+        })
+        desconto = subtotal * 0.1
+        total = subtotal - desconto
+        c('.subtotal .valor--item').innerHTML = `R$ ${subtotal.toFixed(2)}`
+        c('.desconto span:last-child').innerHTML = `R$ ${desconto.toFixed(2)}`
+        c('.total span:last-child').innerHTML = `<strong>R$ ${total.toFixed(2)}</strong>`
     }else {
         c('.carrinho').classList.remove('show')
+        c('.menu .tem--produto--carrinho').style.display = 'none' 
     }
 }
 
