@@ -98,7 +98,7 @@ function atualizarCarrinho(){
             subtotal += modeloItem.price * itemCarrinho.qt
             let carrinhoItem = c('.modelo .item--carrinho').cloneNode(true)
             carrinhoItem.querySelector('img').src = modeloItem.img
-            carrinhoItem.querySelector('.nome--item--carrinho').innerHTML = `${modeloItem.nome}`//verificar  - ${modeloItem.size[itemCarrinho.tamanho]}
+            carrinhoItem.querySelector('.nome--item--carrinho').innerHTML = `${modeloItem.nome}`//- ${modeloItem.size[itemCarrinho.tamanho]}
             carrinhoItem.querySelector('.quantidade--item--carrinho').innerHTML = itemCarrinho.qt
             carrinhoItem.querySelector('.menos--item--carrinho').addEventListener('click', ()=> {
                 if(itemCarrinho.qt > 1){
